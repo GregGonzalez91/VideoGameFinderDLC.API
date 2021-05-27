@@ -20,7 +20,7 @@ namespace VideoGameFinderDLC.Data
         public Guid OwnerId { get; set; }
         [ForeignKey(nameof(GameSystem))]
         public int GameSystemId { get; set; }
-
+        [ForeignKey(nameof(GameGenre))]
         public int GameGenreId { get; set; }
         public string ESRBRating { get; set; }
         public bool IsReccommended { get; set; }
