@@ -13,7 +13,7 @@ namespace VideoGameFinderDLC.Data
         [Key]
         public int GameId { get; set; }
         public string GameTitle { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public int ReleaseDate { get; set; }
         public int PlayerCount { get; set; }
 
         public Guid _userId { get; set; }
