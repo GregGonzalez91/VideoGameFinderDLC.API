@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameGenreService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +68,10 @@
     <ProjectReference Include="..\VideoGameFinderDLC.Data\VideoGameFinderDLC.Data.csproj">
       <Project>{04f1ed32-ae6f-4d75-becd-feb6f55a490e}</Project>
       <Name>VideoGameFinderDLC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoGameFinderDLC.Models\VideoGameFinderDLC.Models.csproj">
+      <Project>{b536f756-0883-4d24-8eaa-32ecfd0321cc}</Project>
+      <Name>VideoGameFinderDLC.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

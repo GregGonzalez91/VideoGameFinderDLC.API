@@ -57,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameGenreCreate.cs" />
+    <Compile Include="GameGenreDetail.cs" />
+    <Compile Include="GameGenreEdit.cs" />
+    <Compile Include="GameGenreItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,10 +71,6 @@
     <ProjectReference Include="..\VideoGameFinderDLC.Data\VideoGameFinderDLC.Data.csproj">
       <Project>{04f1ed32-ae6f-4d75-becd-feb6f55a490e}</Project>
       <Name>VideoGameFinderDLC.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VideoGameFinderDLC.Services\VideoGameFinderDLC.Services.csproj">
-      <Project>{6a7b0749-7a85-4117-9328-6ebc682a5ef6}</Project>
-      <Name>VideoGameFinderDLC.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

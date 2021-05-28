@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VideoGameFinderDLC.Data
+namespace VideoGameFinderDLC.Models
 {
-    public class GameGenre
+    public class GameGenreCreate
     {
-        [Key]
         public int GameGenreId { get; set; }
         [Required]
         public string GenreType { get; set; }
