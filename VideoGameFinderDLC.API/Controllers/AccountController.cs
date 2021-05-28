@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using VideoGameFinderDLC.API.Models;
 using VideoGameFinderDLC.API.Providers;
 using VideoGameFinderDLC.API.Results;
+using VideoGameFinderDLC.Data;
 
 namespace VideoGameFinderDLC.API.Controllers
 {
