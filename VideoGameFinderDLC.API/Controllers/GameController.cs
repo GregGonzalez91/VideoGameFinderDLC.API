@@ -10,6 +10,7 @@ using VideoGameFinderDLC.Services;
 
 namespace VideoGameFinderDLC.API.Controllers
 {
+    [Authorize]
     public class GameController : ApiController
     {
         private GameService CreateGameService()
