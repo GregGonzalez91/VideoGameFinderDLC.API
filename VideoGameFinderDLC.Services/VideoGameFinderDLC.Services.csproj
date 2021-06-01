@@ -57,7 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="GameGenreService.cs" />
+
+    <Compile Include="GameService.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,7 +101,9 @@
       <Name>VideoGameFinderDLC.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\VideoGameFinderDLC.Models\VideoGameFinderDLC.Models.csproj">
-      <Project>{b536f756-0883-4d24-8eaa-32ecfd0321cc}</Project>
+
+      <Project>{B536F756-0883-4D24-8EAA-32ECFD0321CC}</Project>
+
       <Name>VideoGameFinderDLC.Models</Name>
     </ProjectReference>
   </ItemGroup>
