@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using VideoGameFinderDLC.API.Models;
+using VideoGameFinderDLC.Data;
 
 namespace VideoGameFinderDLC.API
 {
