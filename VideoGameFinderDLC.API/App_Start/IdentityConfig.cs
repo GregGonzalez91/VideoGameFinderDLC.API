@@ -6,7 +6,7 @@ using Microsoft.Owin;
 using VideoGameFinderDLC.API.Models;
 using VideoGameFinderDLC.Data;
 
-namespace VideoGameFinderDLC.API
+namespace VideoGameFinderDLC.API 
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
@@ -21,7 +21,7 @@ namespace VideoGameFinderDLC.API
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
-            manager.UserValidator = new UserValidator<ApplicationUser>(manager)
+            manager.UserValidator = new UserValidator<ApplicationUser>(manager) 
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
