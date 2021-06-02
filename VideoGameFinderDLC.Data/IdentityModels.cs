@@ -18,7 +18,7 @@ namespace VideoGameFinderDLC.Data
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
             // Add custom user claims here
-            return userIdentity;  
+            return userIdentity;
         }
     }
 
@@ -28,7 +28,7 @@ namespace VideoGameFinderDLC.Data
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
@@ -36,13 +36,13 @@ namespace VideoGameFinderDLC.Data
 
 
 
-        //public DbSet<Game> Games { get; set; }
+        public DbSet<Game> Games { get; set; }
 
-        //public DbSet<UserRating> UserRatings { get; set; }
+        public DbSet<UserRating> UserRatings { get; set; }
 
-       // public DbSet<GameGenre> GameGenres { get; set; }
+        public DbSet<GameGenre> GameGenres { get; set; }
 
-       // public DbSet<GameSystem> GameSystems { get; set; }
+        public DbSet<GameSystem> GameSystems { get; set; }
 
 
         //public DbSet<GameGenre> GameGenres { get; set; }
