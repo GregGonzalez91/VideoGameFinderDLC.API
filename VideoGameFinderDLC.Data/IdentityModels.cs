@@ -35,21 +35,21 @@ namespace VideoGameFinderDLC.Data
         }
 
 
-       // public DbSet<GameSystem> GameSystems { get; set; }
+        public DbSet<GameSystem> GameSystems { get; set; }
 
-        //public DbSet<Game> Games { get; set; }
+        
         public DbSet<Game> Games { get; set; }
 
         
 
         
-        //public DbSet<UserRating> UserRatings { get; set; }
+        public DbSet<UserRating> UserRatings { get; set; }
 
-       // public DbSet<GameGenre> GameGenres { get; set; }
+      
 
-       // public DbSet<GameSystem> GameSystems { get; set; }
+     
 
-        //public DbSet<UserRating> UserRatings { get; set; }
+       
 
         public DbSet<GameGenre> GameGenres { get; set; }
 
