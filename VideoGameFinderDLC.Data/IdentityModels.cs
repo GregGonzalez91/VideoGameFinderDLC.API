@@ -45,8 +45,6 @@ namespace VideoGameFinderDLC.Data
         public DbSet<GameSystem> GameSystems { get; set; }
 
 
-        //public DbSet<GameGenre> GameGenres { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
