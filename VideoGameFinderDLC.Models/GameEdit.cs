@@ -11,6 +11,6 @@ namespace VideoGameFinderDLC.Models
         public int GameId { get; set; }
         public string GameTitle { get; set; }
         public double GamePrice { get; set; }
-        public string GameSystem { get; set; }
+        public string GameSystemName { get; set; }
     }
 }
