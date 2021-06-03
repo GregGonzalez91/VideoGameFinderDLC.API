@@ -31,8 +31,8 @@ namespace VideoGameFinderDLC.Data
         public bool IsReccommended { get; set; }
         public double GamePrice { get; set; }
 
-        //public string GameGenre { get; set; } *Revisit to rename GenreType
+        public string GenreType { get; set; } 
 
-        //public string GameSystem { get; set; } *Revisit to rename GameSystemName
+        public string GameSystemName { get; set; } 
     }
 }

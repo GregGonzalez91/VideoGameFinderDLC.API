@@ -26,11 +26,11 @@ namespace VideoGameFinderDLC.Services
                     GameTitle = model.GameTitle,
                     ReleaseDate = model.ReleaseDate,
                     PlayerCount = model.PlayerCount,
-                    //GameSystem = model.GameSystem,
+                    GameSystemName = model.GameSystemName,
                     ESRBRating = model.ESRBRating,
                     IsReccommended = model.IsReccommended,
                     GamePrice = model.GamePrice,
-                    //GameGenre = model.GameGenre
+                    GenreType = model.GenreType
                 };
 
 
