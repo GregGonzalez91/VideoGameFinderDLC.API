@@ -9,18 +9,18 @@ Our target audience are gamers of any experience level.
 
 Why did we build this?  All four members of the team are video game lovers and we thought it’d be fun to build something that includes one of our favorite hobbies.
 
-
+--
 ## How it works: 
 Video Game Finder API is fully equipped with CRUD that permits user to log in, then create, view, update, or delete a game, a game genre, a game system, and/or a personal user rating. 
 
-
+--
 ## Structure and Development
 
 Planning doc: https://docs.google.com/document/d/1bxPTlp6MCWlchDbpHXjZKuSNovbah1o0Dlo_paf3QMI/edit?usp=sharing
 
 Table breakdown: https://docs.google.com/spreadsheets/d/11S0XnysUMjEelImNsa3yOtMunQRH_M3OutHNk1c9dG8/edit?usp=sharing
 
-
+--
 ## The future of Video Game Finder: 
 Upcoming features include: 
 - Personal Library 
@@ -28,7 +28,7 @@ Upcoming features include:
 - Leave a detailed review 
 - A Top Rated list based off all users ratings 
 
-
+--
 ## Credits: 
 Video Game Finder was built by Austin's Boyz: 
 
