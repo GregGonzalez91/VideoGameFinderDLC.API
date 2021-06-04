@@ -17,6 +17,7 @@ Video Game Finder API is fully equipped with CRUD that permits user to log in, t
 ## Structure and Development
 
 Planning doc: https://docs.google.com/document/d/1bxPTlp6MCWlchDbpHXjZKuSNovbah1o0Dlo_paf3QMI/edit?usp=sharing
+
 Table breakdown: https://docs.google.com/spreadsheets/d/11S0XnysUMjEelImNsa3yOtMunQRH_M3OutHNk1c9dG8/edit?usp=sharing
 
 
