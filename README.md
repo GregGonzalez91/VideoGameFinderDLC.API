@@ -33,6 +33,10 @@ Upcoming features include:
 Video Game Finder was built by Austin's Boyz: 
 
 Greg Gonzalez - Game Code / GitMaster 
+
 Danny An - Game System Code / Postman Master
+
 Charles Lucas - User Rating Code / SQL Data Master
+
 Kraegan Graves - Game Genre Code / GitMaster 2 
+
