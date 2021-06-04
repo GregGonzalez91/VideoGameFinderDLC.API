@@ -21,6 +21,14 @@ namespace VideoGameFinder.API.Controllers
             return gameGenreService;
         }
 
+        // Get by ID
+        public IHttpActionResult Get(int id)
+        {
+            var gsService = CreateGameGenreService();
+            var gameSystem = gsService.GetGameGenreById(id);
+            return Ok(gameSystem);
+        }
+
         // Get All Method
         public IHttpActionResult Get()
         {
