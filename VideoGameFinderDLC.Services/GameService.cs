@@ -26,12 +26,15 @@ namespace VideoGameFinderDLC.Services
                     GameTitle = model.GameTitle,
                     ReleaseDate = model.ReleaseDate,
                     PlayerCount = model.PlayerCount,
-                    GameSystemName = model.GameSystemName,
+                    //GameSystemName = model.GameSystemName, // doesn't need it same same gamegenreid.
                     ESRBRating = model.ESRBRating,
                     IsReccommended = model.IsReccommended,
                     GamePrice = model.GamePrice,
-                    GenreType = model.GenreType
+                    //GenreType = model.GenreType, in adding gamegenreid in the model layer, it doesn't need to be added. 
+                    GameGenreId = model.GameGenreId,
+                    GameSystemId = model.GameSystemId
                 };
+      
 
 
             using (var ctx = new ApplicationDbContext())
