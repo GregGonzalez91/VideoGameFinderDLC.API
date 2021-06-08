@@ -10,31 +10,20 @@ namespace VideoGameFinderDLC.Services
 {
     public class GameService
     {
-        private readonly Guid _userId;
-
-        public GameService(Guid userId)
-        {
-            _userId = userId;
-        }
-
-        public bool CreateGame(GameCreate model)
+       public bool CreateGame(GameCreate model)
         {
             var entity =
                 new Game()
                 {
-                    OwnerId = _userId,
                     GameTitle = model.GameTitle,
                     ReleaseDate = model.ReleaseDate,
                     PlayerCount = model.PlayerCount,
-                    //GameSystemName = model.GameSystemName, // doesn't need it same same gamegenreid.
                     ESRBRating = model.ESRBRating,
-                    IsReccommended = model.IsReccommended,
                     GamePrice = model.GamePrice,
-                    //GenreType = model.GenreType, in adding gamegenreid in the model layer, it doesn't need to be added. 
                     GameGenreId = model.GameGenreId,
                     GameSystemId = model.GameSystemId
                 };
-      
+
 
 
             using (var ctx = new ApplicationDbContext())
@@ -72,7 +61,7 @@ namespace VideoGameFinderDLC.Services
                 var entity =
                     ctx
                         .Games
-                        .Single(e => e.GameId == id && e.OwnerId == _userId);
+                        .Single(e => e.GameId == id);
                 return
                     new GameDetail
                     {
@@ -89,7 +78,7 @@ namespace VideoGameFinderDLC.Services
                 var entity =
                     ctx
                         .Games
-                        .Single(e => e.GameId == model.GameId && e.OwnerId == _userId);
+                        .Single(e => e.GameId == model.GameId);
 
                 entity.GameTitle = model.GameTitle;
 
@@ -104,7 +93,7 @@ namespace VideoGameFinderDLC.Services
                 var entity =
                     ctx
                         .Games
-                        .Single(e => e.GameId == gameId && e.OwnerId == _userId);
+                        .Single(e => e.GameId == gameId);
 
                 ctx.Games.Remove(entity);
 

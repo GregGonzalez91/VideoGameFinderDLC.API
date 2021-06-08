@@ -10,9 +10,11 @@ namespace VideoGameFinderDLC.Data
 {
    public class UserRating
     {
+        
+        public Guid OwnerId { get; set; }
         [Key]
-        public int UserId { get; set; }
-        public string GameTitle { get; set; }
+        public int UserRatingId { get; set; }
+        public int UserGameRating { get; set; }
 
         [ForeignKey(nameof(Game))]
         public int GameId { get; set; }
