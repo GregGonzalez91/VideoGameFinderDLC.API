@@ -8,9 +8,8 @@ namespace VideoGameFinderDLC.Models
 {
     public class UserRatingListItem
     {
-        public int UserId { get; set; }
-        public string GameTitle { get; set; }
-
-        //public int UserGameRating { get; set; }
+        public bool IsRecommended { get; set; }
+        public int UserGameRating { get; set; }
+        public int GameId { get; set; }
     }
 }

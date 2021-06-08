@@ -16,9 +16,6 @@ namespace VideoGameFinderDLC.Data
         public int ReleaseDate { get; set; }
         public int PlayerCount { get; set; }
 
-        public Guid _userId { get; set; } //revist with Greg
-        public Guid OwnerId { get; set; } //revist with Greg
-        
         [ForeignKey(nameof(GameSystem))]
         public int GameSystemId { get; set; }
         public virtual GameSystem GameSystem { get; set; }
@@ -28,11 +25,7 @@ namespace VideoGameFinderDLC.Data
         public virtual GameGenre GameGenre { get; set; }
         
         public string ESRBRating { get; set; }
-        public bool IsReccommended { get; set; }
         public double GamePrice { get; set; }
 
-        //public string GenreType { get; set; } 
-
-        //public string GameSystemName { get; set; } 
     }
 }

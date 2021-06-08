@@ -10,20 +10,11 @@ namespace VideoGameFinderDLC.Services
 {
     public class GameGenreService
     {
-        private readonly Guid _userId;
-
-        public GameGenreService(Guid userId)
-        {
-            _userId = userId;
-        }
-
-        // Create New Game Genre Method 
-        public bool CreateGameGenre(GameGenreCreate model)
+       public bool CreateGameGenre(GameGenreCreate model)
         {
             var entity =
                 new GameGenre()
                 {
-                    //GameGenreId = model.GameGenreId, removed it from GameGenre Create Model. 
                     GenreType = model.GenreType,
                     IsMultiplayer = model.IsMultiplayer,
                     IsNew = model.IsNew

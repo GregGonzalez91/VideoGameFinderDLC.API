@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,14 +12,23 @@ namespace VideoGameFinderDLC.API.Controllers
 {
     public class UserRatingController : ApiController
     {
-        private UserRatingService _userRatingService = new UserRatingService();
+
+        private UserRatingService CreateUserRatingService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userRatingService = new UserRatingService(userId);
+            return userRatingService;
+        }
 
         public IHttpActionResult Post(UserRatingCreate userRating)
         {
+
+            var service = CreateUserRatingService();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (!_userRatingService.CreateUserRating(userRating))
+            if (!service.CreateUserRating(userRating))
                 return InternalServerError();
 
             return Ok();
@@ -26,22 +36,28 @@ namespace VideoGameFinderDLC.API.Controllers
 
         public IHttpActionResult Get()
         {
-            var userRating = _userRatingService.GetUserRatings();
+            var service = CreateUserRatingService();
+
+            var userRating = service.GetUserRatings();
             return Ok(userRating);
         }
 
         public IHttpActionResult GetUserRatingById(int id)
         {
-            var userRating = _userRatingService.GetUserRatingbyId(id);
+            var service = CreateUserRatingService();
+
+            var userRating = service.GetUserRatingbyId(id);
             return Ok(userRating);
         }
 
         public IHttpActionResult Put(UserRatingEdit userRating)
         {
+            var service = CreateUserRatingService();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (!_userRatingService.UpdateUserRating(userRating))
+            if (!service.UpdateUserRating(userRating))
             {
                 return InternalServerError();
             }
@@ -51,7 +67,9 @@ namespace VideoGameFinderDLC.API.Controllers
 
         public IHttpActionResult Delete(int id)
         {
-            if (!_userRatingService.DeleteUserRating(id))
+            var service = CreateUserRatingService();
+
+            if (!service.DeleteUserRating(id))
             {
                 return InternalServerError();
             }
