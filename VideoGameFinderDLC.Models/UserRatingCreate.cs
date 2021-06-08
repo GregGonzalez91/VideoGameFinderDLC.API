@@ -16,5 +16,7 @@ namespace VideoGameFinderDLC.Models
 
         //[ForeignKey]
         public int GameId { get; set; }
+
+        //public int UserGameRating { get; set; }
     }
 }

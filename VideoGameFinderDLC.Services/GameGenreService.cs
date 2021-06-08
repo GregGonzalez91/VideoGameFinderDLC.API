@@ -23,7 +23,7 @@ namespace VideoGameFinderDLC.Services
             var entity =
                 new GameGenre()
                 {
-                    GameGenreId = model.GameGenreId,
+                    //GameGenreId = model.GameGenreId, removed it from GameGenre Create Model. 
                     GenreType = model.GenreType,
                     IsMultiplayer = model.IsMultiplayer,
                     IsNew = model.IsNew

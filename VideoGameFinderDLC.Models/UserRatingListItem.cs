@@ -10,5 +10,7 @@ namespace VideoGameFinderDLC.Models
     {
         public int UserId { get; set; }
         public string GameTitle { get; set; }
+
+        //public int UserGameRating { get; set; }
     }
 }
