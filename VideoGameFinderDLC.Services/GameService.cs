@@ -22,15 +22,11 @@ namespace VideoGameFinderDLC.Services
             var entity =
                 new Game()
                 {
-                    OwnerId = _userId,
                     GameTitle = model.GameTitle,
                     ReleaseDate = model.ReleaseDate,
                     PlayerCount = model.PlayerCount,
-                    GameSystem = model.GameSystem,
                     ESRBRating = model.ESRBRating,
-                    IsReccommended = model.IsReccommended,
                     GamePrice = model.GamePrice,
-                    GameGenre = model.GameGenre
                 };
 
 
