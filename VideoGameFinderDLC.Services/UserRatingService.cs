@@ -8,14 +8,22 @@ using VideoGameFinderDLC.Models;
 
 namespace VideoGameFinderDLC.Services
 {
-  public class UserRatingService
+    public class UserRatingService
     {
+        private readonly Guid _userId;
+
+        public UserRatingService(Guid userId)
+        {
+            _userId = userId;
+        }
         public bool CreateUserRating(UserRatingCreate model)
         {
             var entity =
                 new UserRating()
                 {
-                    GameTitle = model.GameTitle
+                    OwnerId = _userId,
+                    UserGameRating = model.UserGameRating,
+                    IsRecommended = model.IsRecommended
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -35,8 +43,9 @@ namespace VideoGameFinderDLC.Services
                         e =>
                         new UserRatingListItem
                         {
-                            UserId = e.UserId,
-                            GameTitle = e.GameTitle
+                            UserGameRating = e.UserGameRating,
+                            IsRecommended = e.IsRecommended,
+                            GameId = e.GameId
                         });
                 return query.ToArray();//ToArray taking data from db and putting it into 
                 //Array
@@ -50,12 +59,13 @@ namespace VideoGameFinderDLC.Services
                 var entity =
                     ctx
                     .UserRatings
-                    .Single(e => e.UserId == id);//id in postman matches with UserId
+                    .Single(e => e.UserRatingId == id);//id in postman matches with UserId
 
                 return new UserRatingDetail
                 {
-                    UserId = entity.UserId,
-                    GameTitle = entity.GameTitle
+                    UserGameRating = entity.UserGameRating,
+                    IsRecommended = entity.IsRecommended,
+                    GameId = entity.GameId
                 };
             }
         }
@@ -67,8 +77,10 @@ namespace VideoGameFinderDLC.Services
                 var entity =
                     ctx
                     .UserRatings
-                    .Single(e => e.UserId == model.UserId);
-                entity.GameTitle = model.GameTitle;//updating GameTitle in Postman
+                    .Single(e => e.UserRatingId == model.UserRatingId);
+                entity.UserGameRating = model.UserGameRating;
+                entity.IsRecommended = model.IsRecommended;
+                entity.GameId = model.GameId;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -81,7 +93,7 @@ namespace VideoGameFinderDLC.Services
                 var entity =
                     ctx
                     .UserRatings
-                    .Single(e => e.UserId == userId);
+                    .Single(e => e.UserRatingId == userId);
 
                 ctx.UserRatings.Remove(entity);
                 return ctx.SaveChanges() == 1;

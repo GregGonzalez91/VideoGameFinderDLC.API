@@ -13,17 +13,12 @@ namespace VideoGameFinderDLC.API.Controllers
     [Authorize] 
     public class GameController : ApiController
     {
-        private GameService CreateGameService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var gameService = new GameService(userId);
-            return gameService;
-        }
+        private GameService service = new GameService();
 
         public IHttpActionResult Get()
         {
-            GameService gameService = CreateGameService();
-            var game = gameService.GetGame();
+           
+            var game = service.GetGame();
             return Ok(game);
         }
 
@@ -32,7 +27,6 @@ namespace VideoGameFinderDLC.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateGameService();
 
             if (!service.CreateGame(game))
                 return InternalServerError();
@@ -42,8 +36,7 @@ namespace VideoGameFinderDLC.API.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            GameService gameService = CreateGameService();
-            var game = gameService.GetGameById(id);
+            var game = service.GetGameById(id);
             return Ok(game);
         }
 
@@ -51,8 +44,6 @@ namespace VideoGameFinderDLC.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-
-            var service = CreateGameService();
 
             if (!service.UpdateGame(game))
                 return InternalServerError();
@@ -62,7 +53,6 @@ namespace VideoGameFinderDLC.API.Controllers
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateGameService();
 
             if (!service.DeleteGame(id))
                 return InternalServerError();

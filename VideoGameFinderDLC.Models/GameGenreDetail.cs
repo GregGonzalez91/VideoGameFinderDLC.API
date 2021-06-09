@@ -8,7 +8,6 @@ namespace VideoGameFinderDLC.Models
 {
     public class GameGenreDetail
     {
-        //view all properties of a Game Genre
         public int GameGenreId { get; set; }
         public string GenreType { get; set; }
         public bool IsNew { get; set; }

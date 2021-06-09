@@ -13,19 +13,19 @@ namespace VideoGameFinder.API.Controllers
     [Authorize]
     public class GameGenreController : ApiController
     {
-        // Method that creates Game Genre Service
-        private GameGenreService CreateGameGenreService()
+        private GameGenreService service = new GameGenreService();
+
+        // Get by ID
+        public IHttpActionResult Get(int id)
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var gameGenreService = new GameGenreService(userId);
-            return gameGenreService;
+            var gameGenres = service.GetGameGenreById(id);
+            return Ok(gameGenres);
         }
 
         // Get All Method
         public IHttpActionResult Get()
         {
-            GameGenreService gameGenreService = CreateGameGenreService();
-            var gameGenres = gameGenreService.GetGameGenres();
+            var gameGenres = service.GetGameGenres();
             return Ok(gameGenres);
         }
 
@@ -35,7 +35,7 @@ namespace VideoGameFinder.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateGameGenreService();
+
 
             if (!service.CreateGameGenre(gameGenre))
                 return InternalServerError();
@@ -49,8 +49,6 @@ namespace VideoGameFinder.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateGameGenreService();
-
             if (!service.UpdateGameGenre(gameGenre))
                 return InternalServerError();
 
@@ -60,7 +58,6 @@ namespace VideoGameFinder.API.Controllers
         // Delete Method
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateGameGenreService();
 
             if (!service.DeleteGameGenre(id))
                 return InternalServerError();

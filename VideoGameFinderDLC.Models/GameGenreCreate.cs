@@ -9,10 +9,10 @@ namespace VideoGameFinderDLC.Models
 {
     public class GameGenreCreate
     {
-        public int GameGenreId { get; set; }
         [Required]
         public string GenreType { get; set; }
         public bool IsNew { get; set; }
         public bool IsMultiplayer { get; set; }
+
     }
 }

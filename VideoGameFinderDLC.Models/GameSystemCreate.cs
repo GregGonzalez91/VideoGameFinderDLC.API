@@ -9,8 +9,6 @@ namespace VideoGameFinderDLC.Models
 {
     public class GameSystemCreate
     {
-        [Display(Name = "System Name")]
-        public int GameSystemId { get; set; }
 
         //Had this above and didnt know how to deal with it. Never casted as an arry. No way to give min and max length. Generally try nto set a value on. 
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
