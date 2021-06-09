@@ -20,6 +20,10 @@ To add data for game, game system, game genre and a unique user rating, you must
 3. Game - GameSystemId and GameGenreId are required to create a game, and these are automatically created once the above steps have been taken. 
 4. User Rating - GameId is required to create a user rating, a GameId is created when following the above step. 
 
+WARNINGS: 
+1. If you delete a Game Genre or Game System, any games tied to them will not be fully viewable or editable. 
+2. If you delete a Game, your saved User Rating will be deleted permanently. 
+
 --
 ## Structure and Development
 
