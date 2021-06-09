@@ -23,7 +23,8 @@ namespace VideoGameFinderDLC.Services
                 {
                     OwnerId = _userId,
                     UserGameRating = model.UserGameRating,
-                    IsRecommended = model.IsRecommended
+                    IsRecommended = model.IsRecommended,
+                    GameId = model.GameId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -45,7 +46,8 @@ namespace VideoGameFinderDLC.Services
                         {
                             UserGameRating = e.UserGameRating,
                             IsRecommended = e.IsRecommended,
-                            GameId = e.GameId
+                            GameTitle = e.Game.GameTitle,
+                            UserRatingId = e.UserRatingId
                         });
                 return query.ToArray();//ToArray taking data from db and putting it into 
                 //Array
@@ -65,7 +67,8 @@ namespace VideoGameFinderDLC.Services
                 {
                     UserGameRating = entity.UserGameRating,
                     IsRecommended = entity.IsRecommended,
-                    GameId = entity.GameId
+                    GameTitle = entity.Game.GameTitle,
+                    UserRatingId = entity.UserRatingId
                 };
             }
         }

@@ -46,7 +46,11 @@ namespace VideoGameFinderDLC.Services
                                 new GameListItem
                                 {
                                     GameId = e.GameId,
-                                    GameTitle = e.GameTitle
+                                    GameTitle = e.GameTitle,
+                                    GameSystemName = e.GameSystem.GameSystemName,
+                                    GenreType = e.GameGenre.GenreType,
+                                    ReleaseDate = e.ReleaseDate,
+                                    PlayerCount = e.PlayerCount 
                                 }
                         );
 
@@ -66,7 +70,12 @@ namespace VideoGameFinderDLC.Services
                     new GameDetail
                     {
                         GameId = entity.GameId,
-                        GameTitle = entity.GameTitle
+                        GameTitle = entity.GameTitle,
+                        GameSystemName = entity.GameSystem.GameSystemName,
+                        GenreType = entity.GameGenre.GenreType,
+                        ReleaseDate = entity.ReleaseDate,
+                        PlayerCount = entity.PlayerCount
+
                     };
             }
         }

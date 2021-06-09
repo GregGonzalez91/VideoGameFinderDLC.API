@@ -12,7 +12,8 @@ namespace VideoGameFinderDLC.Models
         public bool IsRecommended  { get; set; }
 
         public int UserGameRating { get; set; }
-        public int GameId { get; set; }
+        public string GameTitle { get; set; }
+        public int UserRatingId { get; set; }
 
     }
 }

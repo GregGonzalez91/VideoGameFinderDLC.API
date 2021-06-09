@@ -12,5 +12,7 @@ namespace VideoGameFinderDLC.Models
         public string GameTitle { get; set; }
         public int ReleaseDate { get; set; }
         public int PlayerCount { get; set; }
+        public string GameSystemName { get; set; }
+        public string GenreType { get; set; }
     }
 }
