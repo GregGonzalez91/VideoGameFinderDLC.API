@@ -13,6 +13,13 @@ Why did we build this?  All four members of the team are video game lovers and w
 ## How it works: 
 Video Game Finder API is fully equipped with CRUD that permits user to log in, then create, view, update, or delete a game, a game genre, a game system, and/or a personal user rating. 
 
+IMPORTANT: 
+To add data for game, game system, game genre and a unique user rating, you must add data in the following steps: 
+1. Game System - If no game system exists, or the game system you want is not yet added, please start with CREATING one.  
+2. Game Genre - If no game genre exists, or the gam egenre you want is not yet added, please add this after adding a game system. 
+3. Game - GameSystemId and GameGenreId are required to create a game, and these are automatically created once the above steps have been taken. 
+4. User Rating - GameId is required to create a user rating, a GameId is created when following the above step. 
+
 --
 ## Structure and Development
 
