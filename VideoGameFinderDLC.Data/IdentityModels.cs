@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using VideoGameFinderDLC.Data;
 
-namespace VideoGameFinderDLC.Data
+namespace VideoGameFinderDLC.Data 
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser 
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
             // Add custom user claims here
-            return userIdentity; 
+            return userIdentity;  
         }
     }
 
@@ -33,11 +34,15 @@ namespace VideoGameFinderDLC.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<GameSystem> GameSystems { get; set; }
+
 
         public DbSet<Game> Games { get; set; }
 
         public DbSet<UserRating> UserRatings { get; set; }
+
+
+       public DbSet<GameSystem> GameSystems { get; set; }
+
 
         public DbSet<GameGenre> GameGenres { get; set; }
 
@@ -71,7 +76,5 @@ namespace VideoGameFinderDLC.Data
             HasKey(iur => iur.UserId);
         }
     }
-
-
 
 }

@@ -10,6 +10,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using VideoGameFinderDLC.API.Models;
+using VideoGameFinderDLC.Data;
 
 namespace VideoGameFinderDLC.API.Providers
 {
@@ -36,7 +37,7 @@ namespace VideoGameFinderDLC.API.Providers
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
-                return;
+                return; 
             }
 
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
